@@ -1,16 +1,14 @@
 import org.junit.Test;
 import io.qameta.allure.junit4.DisplayName;
-import ru.yandex.praktikum.modelpage.StellarBurgersPage;
+import ru.yandex.praktikum.pageobjects.StellarBurgersPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.Assert.assertTrue;
-
 
 public class RegisterTest {
 
     int correctCountPassword = 6;
     int incorrectcountPassword = 5;
-
 
     @Test
     @DisplayName("Пользователь может зарегистрироваться")
@@ -39,5 +37,4 @@ public class RegisterTest {
 
         assertTrue("Ошибка некорректного пароля не отображается", isRegisteredUser);
     }
-
 }

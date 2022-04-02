@@ -1,6 +1,6 @@
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
-import ru.yandex.praktikum.modelpage.StellarBurgersPage;
+import ru.yandex.praktikum.pageobjects.StellarBurgersPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.Assert.assertTrue;

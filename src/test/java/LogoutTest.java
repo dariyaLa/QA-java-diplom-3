@@ -1,7 +1,7 @@
 import com.UserOperations;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
-import ru.yandex.praktikum.modelpage.StellarBurgersPage;
+import ru.yandex.praktikum.pageobjects.StellarBurgersPage;
 
 import java.util.Map;
 

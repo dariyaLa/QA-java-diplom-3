@@ -1,22 +1,18 @@
-package ru.yandex.praktikum.modelpage;
+package ru.yandex.praktikum.pageobjects;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import com.github.javafaker.Faker;
 
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Selenide.page;
 
 public class LoginPage {
 
-    Faker faker = new Faker();
-
-    //email
     @FindBy(how = How.XPATH, using = ".//label[text()='Email']/following-sibling::input")
     private SelenideElement email;
 
-    //password
     @FindBy(how = How.XPATH, using = ".//label[text()='Пароль']/following-sibling::input")
     private SelenideElement password;
 
@@ -38,43 +34,52 @@ public class LoginPage {
     @FindBy(how = How.XPATH, using = ".//button[@class='Account_button__14Yp3 text text_type_main-medium text_color_inactive']")
     private SelenideElement logoutButton;
 
-
-    public StellarBurgersPage login (String email, String password) {
+    @Step("Авторизация")
+    public StellarBurgersPage login(String email, String password) {
         this.email.shouldBe(enabled).setValue(email);
         this.password.setValue(password);
         this.loginButton.click();
         return page(StellarBurgersPage.class);
+
     }
 
-    public RegisterPage goRegistr (){
+    @Step("Переход к регистрации")
+    public RegisterPage goRegistr() {
         this.registerLink.click();
-        return page (RegisterPage.class);
+        return page(RegisterPage.class);
+
     }
 
-    //кнопка отображается
-    public boolean isLoginButton (){
+    public boolean isLoginButton() {
         return loginButton.isDisplayed();
     }
 
-    public RecoveryPasswordPage goRecoveryPassword (){
+    @Step("Нажатие на линк Восстановление пароля")
+    public RecoveryPasswordPage goRecoveryPassword() {
         this.recoveryPasswordLink.click();
-        return page (RecoveryPasswordPage.class);
+        return page(RecoveryPasswordPage.class);
+
     }
 
-    public StellarBurgersPage constructorButtonClick () {
+    @Step("Нажатие на кнопку Конструктор")
+    public StellarBurgersPage constructorButtonClick() {
         this.constructorButton.click();
         return page(StellarBurgersPage.class);
+
     }
 
-    public StellarBurgersPage logoClick () {
+    @Step("Нажатие на лого")
+    public StellarBurgersPage logoClick() {
         this.logo.click();
         return page(StellarBurgersPage.class);
+
     }
 
-    public LoginPage logoutClick () {
+    @Step("Выход из акканунта")
+    public LoginPage logoutClick() {
         this.logoutButton.click();
         return page(LoginPage.class);
-    }
 
+    }
 
 }

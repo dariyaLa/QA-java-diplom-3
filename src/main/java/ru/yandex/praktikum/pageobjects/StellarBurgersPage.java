@@ -1,5 +1,6 @@
-package ru.yandex.praktikum.modelpage;
+package ru.yandex.praktikum.pageobjects;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import com.codeborne.selenide.SelenideElement;
@@ -10,7 +11,6 @@ public class StellarBurgersPage {
 
     public static final String URL = "https://stellarburgers.nomoreparties.site/";
 
-    //кнопка лк
     @FindBy(how = How.XPATH, using = ".//p[text()='Личный Кабинет']")
     private SelenideElement lk;
 
@@ -20,37 +20,32 @@ public class StellarBurgersPage {
     @FindBy(how = How.XPATH, using = ".//button[text()='Оформить заказ']")
     private SelenideElement createOrderButton;
 
-    //соусы
     @FindBy(how = How.XPATH, using = ".//span[@class='text text_type_main-default'][text()='Соусы']")
     private SelenideElement sauces;
 
-    //подпись соусы
     @FindBy(how = How.XPATH, using = ".//h2[@class='text text_type_main-medium mb-6 mt-10'][text()='Соусы']")
     private SelenideElement saucesInList;
 
-    //начинки
     @FindBy(how = How.XPATH, using = ".//span[@class='text text_type_main-default'][text()='Начинки']")
     private SelenideElement fillings;
 
-    //подпись начинки
     @FindBy(how = How.XPATH, using = ".//h2[@class='text text_type_main-medium mb-6 mt-10'][text()='Начинки']")
     private SelenideElement fillingsInList;
 
-    //булки
     @FindBy(how = How.XPATH, using = ".//span[@class='text text_type_main-default'][text()='Булки']")
     private SelenideElement rolls;
 
-    //подпись булки
     @FindBy(how = How.XPATH, using = ".//h2[@class='text text_type_main-medium mb-6 mt-10'][text()='Булки']")
     private SelenideElement rollsInList;
 
-
+    @Step("Нажатие на Личный кабинет")
     public LoginPage inLK() {
         this.lk.click();
         return page(LoginPage.class);
 
     }
 
+    @Step("Нажатие на кнопку Войти в аккаунт")
     public LoginPage loginWithButton() {
         this.inAccountButton.click();
         return page(LoginPage.class);
@@ -65,24 +60,31 @@ public class StellarBurgersPage {
         return inAccountButton.isEnabled();
     }
 
+    @Step("Нажатие на список соусов")
     public boolean isSaucesSection() {
         this.sauces.click();
         return saucesInList.isEnabled();
+
     }
 
+    @Step("Нажатие на список начинок")
     public StellarBurgersPage fillingsSection() {
         this.fillings.click();
         return page(StellarBurgersPage.class);
+
     }
 
     public boolean isFillingsSection() {
         this.fillings.click();
         return fillingsInList.isEnabled();
+
     }
 
+    @Step("Нажатие на список булок")
     public boolean isRollsSection() {
         this.rolls.click();
         return rollsInList.isEnabled();
+
     }
 
 }

@@ -1,4 +1,3 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -6,12 +5,11 @@ import io.qameta.allure.junit4.DisplayName;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
-import ru.yandex.praktikum.modelpage.StellarBurgersPage;
+import ru.yandex.praktikum.pageobjects.StellarBurgersPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.setWebDriver;
 import static org.junit.Assert.assertTrue;
-
 
 public class RegisterFFTest {
 
@@ -58,5 +56,4 @@ public class RegisterFFTest {
 
         assertTrue("Ошибка некорректного пароля не отображается", isRegisteredUser);
     }
-
 }

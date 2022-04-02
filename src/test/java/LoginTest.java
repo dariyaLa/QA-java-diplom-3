@@ -2,7 +2,7 @@ import com.UserOperations;
 import org.junit.After;
 import org.junit.Test;
 import io.qameta.allure.junit4.DisplayName;
-import ru.yandex.praktikum.modelpage.StellarBurgersPage;
+import ru.yandex.praktikum.pageobjects.StellarBurgersPage;
 
 import java.util.Map;
 

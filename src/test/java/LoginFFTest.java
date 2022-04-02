@@ -5,7 +5,7 @@ import org.junit.Test;
 import io.qameta.allure.junit4.DisplayName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import ru.yandex.praktikum.modelpage.StellarBurgersPage;
+import ru.yandex.praktikum.pageobjects.StellarBurgersPage;
 
 import java.util.Map;
 
